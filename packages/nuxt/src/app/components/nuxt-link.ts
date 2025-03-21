@@ -107,7 +107,7 @@ export interface NuxtLinkOptions extends
   prefetchOn?: Exclude<NuxtLinkProps['prefetchOn'], string>
 }
 
-type NuxtLinkDefaultSlotProps<CustomProp extends boolean = false> = CustomProp extends true
+export type NuxtLinkDefaultSlotProps<CustomProp extends boolean = false> = CustomProp extends true
   ? {
       href: string
       navigate: (e?: MouseEvent) => Promise<void>
@@ -121,7 +121,7 @@ type NuxtLinkDefaultSlotProps<CustomProp extends boolean = false> = CustomProp e
     }
   : UnwrapRef<UseLinkReturn>
 
-type NuxtLinkSlots<CustomProp extends boolean = false> = {
+export type NuxtLinkSlots<CustomProp extends boolean = false> = {
   default?: (props: NuxtLinkDefaultSlotProps<CustomProp>) => VNode[]
 }
 
